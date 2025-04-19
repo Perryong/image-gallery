@@ -1,0 +1,340 @@
+body {
+  background-color: #f4f4f4; /* Light background */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.lg-react-element {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 15px;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.linkedin-image {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
+  background-color: blue;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+footer {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 20px;
+  text-align: center; /* Center-align text */
+  font-size: 14px; /* Adjust font size as needed */
+  color: #333; /* Darker text color for contrast */
+  border-top: 1px solid #eaeaea; /* Add a top border for definition */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+
+.linkedin-container, .footer-text {
+  flex: 1; /* Distribute space evenly */
+  margin: 5px; /* Spacing between elements */
+  text-align: left; /* Align text to the left */
+}
+
+.linkedin-image {
+  width: 24px; /* Adjust size of LinkedIn icon */
+  height: 24px;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .footer-content {
+      flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .linkedin-container, .footer-text {
+      text-align: center; /* Center-align text for small screens */
+  }
+}
+
+.totoro {
+display: block;
+margin: 0 auto; /* Center the image */
+max-width: 10%; /* Reduce the size to 50% of its original */
+height: auto;
+background-color: #f4f4f4;
+margin-top: 50px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+.totoro {
+  max-width: 50%; /* Adjust the size for smaller screens */
+}
+}
+
+.navbar-nav {
+  display: flex !important; 
+  flex-direction: row !important; 
+  align-items: center;
+  margin-left: 0; /* Removes any default left margin */
+  padding-left: 15px; /* Removes any default left padding */
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.nav-item{
+  margin-right: 20px;
+  font-size: large;
+  list-style-type: none;
+}
+
+
+.nav-brand-item {
+  font-family: Arial, sans-serif; /* Example font */
+  color: #333; /* Dark grey color */
+  font-size: 2rem; /* Example font size */
+  margin-left: 5px;
+  padding-left: -10px
+}
+
+.nav-link {
+  font-family: Arial, sans-serif; /* Ensure matching font with Brand */
+  color: #333; /* Matching color */
+  font-size: rem; /* Slightly smaller font size than Brand */
+  padding-left: 0; /* Adjust as needed */
+}
+
+
+
+.nav-brand-item{
+  color: black;
+  transition: color 0.3s;
+}
+
+
+.nav-brand-item:hover, .nav-brand-item:focus{
+  color: #007bff;
+}
+
+
+.nav-brand-item:active{
+  color: black;
+
+}
+
+.nav-link{
+  color: black;
+  transition: color 0.3s;
+}
+
+.nav-link:hover, nav-link:focus{
+  color: #007bff;
+}
+
+.nav-link:active{
+  color: black;
+}
+
+
+/* slider */
+.slider {
+width: 100vw;
+height: 100vh;
+position: relative;
+overflow: hidden;
+display: flex; /* Enable flex container */
+justify-content: center; /* Center slides horizontally */
+align-items: center; /* Center slides vertically */
+display: flex;
+flex-wrap: wrap;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+  transition: all 2s ease;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+}
+
+@media screen and (min-width: 600px) {
+  .slide img {
+    width: 100%;
+    height: 100;
+    
+  }
+}
+
+.slide img {
+  width: 100%;
+  height: 100;
+  object-fit: cover;
+}
+
+.current {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  position: absolute;
+  top: 23rem;
+  left: 5rem;
+  opacity: 0;
+  width: 50%;
+  color: black;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.3);
+  animation: slide-up 1s ease 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  font: sans-serif;
+  font-size: x-large;
+  
+}
+
+@keyframes slide-up {
+  0% {
+    visibility: visible;
+    top: 23rem;
+  }
+  100% {
+    visibility: visible;
+    top: 17rem;
+  }
+}
+
+
+.content > * {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.current .content {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease;
+}
+
+.arrow {
+  border: 2px solid white;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  height: 3vw;
+  width: 3vw;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 999;
+  min-height: 20px; /* Minimum size */
+  min-width: 20px; /* Minimum size */
+  max-height: 40px; /* Maximum size */
+  max-width: 40px; /* Maximum size */
+}
+.arrow:hover {
+  background-color: #fff;
+  color: #777;
+}
+
+.next {
+  top: 35%;
+  right: 2rem;
+}
+.prev {
+  top: 35%;
+  left: 2rem;
+}
+
+hr {
+  height: 2px;
+  background: white;
+  width: 50%;
+}
+
+
+.header-content button {
+  background-color: #fff; /* White background */
+  border: 2px solid #000; /* Black border */
+  color: #000; /* Black text */
+  padding: 10px 20px; /* Padding around text */
+  margin-right: 10px; /* Space between buttons */
+  font-size: 16px; /* Text size */
+  cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.header-content button:hover {
+  background-color: #000; /* Black background on hover */
+  color: #fff; /* White text on hover */
+}
+
+.header-content button:focus {
+  outline: none; /* Removes the outline to keep the design clean */
+}
+
+
+/* Styles for the scroll-to-top button */
+.scroll-to-top {
+border: none; /* Remove the border */
+background-color: transparent; /* Make the background transparent */
+cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+padding: 10px; /* Add some padding around the icon */
+border-radius: 50%; /* Optional: makes the button rounded */
+position: fixed; /* Keep the button fixed */
+right: 20px; /* Distance from the right */
+bottom: 20px; /* Distance from the bottom */
+width: 110px; /* Width of the button */
+height: 110px; /* Height of the button */
+display: flex; /* Use flexbox for centering */
+align-items: center; /* Center items vertically */
+justify-content: center; /* Center items horizontally */
+transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.scroll-to-top:hover {
+background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Removes the focus outline to keep the design clean */
+.scroll-to-top:focus {
+outline: none;
+}
+
+
