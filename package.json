@@ -19,6 +19,7 @@
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "^5.15.6",
     "chokidar": "^3.5.3",
+    "gapi-script": "^1.2.0",
     "lightgallery": "^2.7.2",
     "mdbreact": "^5.2.0",
     "react": "^18.2.0",

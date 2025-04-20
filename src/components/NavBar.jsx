@@ -1,49 +1,41 @@
-import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import { NavLink as RRNavLink } from 'react-router-dom'; // React Router NavLink
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import React from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import '../styles.css';  // your one-and-only stylesheet
 
-export class NavBar extends Component {
-    constructor(props) {
-        super(props);
+export default function NavBar() {
+  return (
+    <nav className="navbar">
+      <RouterNavLink to="/" className="nav-brand-item">
+        Perry ONG | Portfolio
+      </RouterNavLink>
 
-        this.toggleNavbar = this.toggleNavbar.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-
-    toggleNavbar() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
-
-    render() {
-        return (
-            <div id="navigation">
-                <Navbar color="white" light expand="md" fixed="top" scrolling>
-                    <NavbarBrand href="/">
-                        <strong className="nav-brand-item">Perry ONG  | Portfolio</strong>
-                        {/* Logo can be included here */}
-                    </NavbarBrand>
-                        <Nav className="mr-auto" navbar>
-                            <NavItem>
-                                <NavLink exact to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://perryongwq.github.io/Personal/" target="_blank" className='nav-link'>About Me</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/Perryongwq?tab=repositories" target="_blank" className='nav-link'>Projects (Github)</NavLink>
-                            </NavItem>
-
-                        </Nav>
-
-                </Navbar>
-            </div>
-        );
-    }
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <RouterNavLink to="/" className="nav-link">
+            Home
+          </RouterNavLink>
+        </li>
+        <li className="nav-item">
+          <a
+            href="https://perryongwq.github.io/Personal/"
+            className="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            About Me
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            href="https://github.com/Perryongwq?tab=repositories"
+            className="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Projects (Github)
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
-
-
